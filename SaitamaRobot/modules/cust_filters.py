@@ -67,13 +67,13 @@ def list_handlers(update, context):
             filter_list = "*local filters:*\n"
         else:
             chat_name = chat.title
-            filter_list = "*Filters in {}*:\n"
+            filter_list = "*Hello sir,this is filters in {}*:\n"
 
     all_handlers = sql.get_chat_triggers(chat_id)
 
     if not all_handlers:
         send_message(
-            update.effective_message, "No filters saved in {}!".format(chat_name)
+            update.effective_message, "{} has no filters stored!".format(chat_name)
         )
         return
 
@@ -243,7 +243,7 @@ def stop_filter(update, context):
             chat_name = chat.title
 
     if len(args) < 2:
-        send_message(update.effective_message, "What should i stop?")
+        send_message(update.effective_message, "Excuse me sir, What should i stop?")
         return
 
     chat_filters = sql.get_chat_triggers(chat_id)
@@ -257,7 +257,7 @@ def stop_filter(update, context):
             sql.remove_filter(chat_id, args[1])
             send_message(
                 update.effective_message,
-                "Okay, I'll stop replying to that filter in *{}*.".format(chat_name),
+                "Okay sir, This filter already stoped in *{}*.".format(chat_name),
                 parse_mode=telegram.ParseMode.MARKDOWN,
             )
             raise DispatcherHandlerStop
@@ -418,7 +418,7 @@ def reply_filter(update, context):
                     except BadRequest:
                         send_message(
                             message,
-                            "I don't have the permission to send the content of the filter.",
+                            "I'm sorry sir, I don't have the permission to send the content of the filter.",
                         )
                 break
             else:
