@@ -81,18 +81,18 @@ Hi {}, my name is {}!
 ==========================
 `Maintained By` @lnalc
 ==========================
-㉨ Find the list of available commands with /help ㉨
+Find the list of available commands with /help
 """
 
 HELP_STRINGS = """
-*Main* commands available[:](https://telegra.ph/file/f17b58ca75b7b3357dcf1.jpg)
+*Main* commands available[:](https://telegra.ph/file/3598bd348e2990d8b9037.jpg)
 
  -> /help: PM's you this message.
  -> /help <module name>: PM's you info about that module.
  -> /donate: information on how to donate!
  -> /settings:
-   × in PM: will send you your settings for all supported modules.
-   × in a group: will redirect you to pm, with all that chat's settings.
+   ㉨ in PM: will send you your settings for all supported modules.
+   ㉨ in a group: will redirect you to pm, with all that chat's settings.
 """
 
 
@@ -224,7 +224,7 @@ def start(update: Update, context: CallbackContext):
                             ),
                             InlineKeyboardButton(
                                 text="Group Chat",
-                                url="https://t.me/nimeklove",
+                                url="https://t.me/halallover",
                             )
                         ],
                     ]
@@ -282,7 +282,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Hello! here is the help for the *{}* module:\n".format(
+                "Here is the help for the *{}* module:\n Thanks me later".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -339,7 +339,7 @@ def get_help(update: Update, context: CallbackContext):
 
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
-        if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
+        if len(args) >= 2 and any(args[1].lower() == ㉨ for ㉨ in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_text(
                 f"Hello! Contact me in PM to get help of {module.capitalize()}",
@@ -372,10 +372,10 @@ def get_help(update: Update, context: CallbackContext):
         )
         return
 
-    elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
+    elif len(args) >= 2 and any(args[1].lower() == ㉨ for ㉨ in HELPABLE):
         module = args[1].lower()
         text = (
-            "Here is the available help for the *{}* module:\n".format(
+            "Here is the available help for the *{}* module:\n Thanks me later".format(
                 HELPABLE[module].__mod_name__
             )
             + HELPABLE[module].__help__
