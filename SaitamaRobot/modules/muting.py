@@ -82,13 +82,13 @@ def mute(update: Update, context: CallbackContext) -> str:
         bot.restrict_chat_member(chat.id, user_id, chat_permissions)
         bot.sendMessage(
             chat.id,
-            f"Muted <b>{html.escape(member.user.first_name)}</b> with no expiration date!",
+            f"Yoo sir <b>{html.escape(member.user.first_name)}</b> is successfully muted!",
             parse_mode=ParseMode.HTML,
         )
         return log
 
     else:
-        message.reply_text("This user is already muted!")
+        message.reply_text("Dia udah ke mute sayang!")
 
     return ""
 
@@ -106,7 +106,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "You'll need to either give me a username to unmute, or reply to someone to be unmuted."
+            "Hey sir, give me a username to unmute, or reply to someone to be unmuted."
         )
         return ""
 
@@ -119,7 +119,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
             and member.can_send_other_messages
             and member.can_add_web_page_previews
         ):
-            message.reply_text("This user already has the right to speak.")
+            message.reply_text("Dia ga kemute sayang.")
         else:
             chat_permissions = ChatPermissions(
                 can_send_messages=True,
@@ -137,7 +137,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
                 pass
             bot.sendMessage(
                 chat.id,
-                f"I shall allow <b>{html.escape(member.user.first_name)}</b> to text!",
+                f"Okay <b>{html.escape(member.user.first_name)}</b> Is unmuted, lets join the chat!",
                 parse_mode=ParseMode.HTML,
             )
             return (
@@ -149,7 +149,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
     else:
         message.reply_text(
             "This user isn't even in the chat, unmuting them won't make them talk more than they "
-            "already do!"
+            "Sudah di unmute sayang"
         )
 
     return ""
@@ -231,7 +231,7 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
                 chat.id,
                 excp.message,
             )
-            message.reply_text("Well damn, I can't mute that user.")
+            message.reply_text("I'm sorry sir, I can't mute that user.")
 
     return ""
 
