@@ -41,7 +41,7 @@ def afk(update: Update, context: CallbackContext):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-            "{} is now away!{}".format(fname, notice))
+            "{} go afk,sayonara!{}".format(fname, notice))
     except BadRequest:
         pass
 
@@ -60,9 +60,9 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} is here!",
-                "{} is back!",
-                "{} is now in the chat!",
+                "Okaeri! {}",
+                "Yoo {}\nMy Darling is Back!",
+                "{} My baby in the chat!",
                 "{} is awake!",
                 "{} is back online!",
                 "{} is finally here!",
@@ -152,8 +152,8 @@ def check_afk(update: Update, context: CallbackContext, user_id: int, fst_name: 
 
 __help__ = """
  • `/afk <reason>`*:* mark yourself as AFK (away from keyboard).
- • `brb <reason>`*:* same as the afk command - but not a command.
-When marked as AFK, any mentions will be replied to with a message to say you're not available!
+ • `beb <reason>,ups sorry, I mean brb <reason>`*:* same as the afk command - but not a command.
+When marked as AFK, any mentions will be replied to with a message to say you're is afk!
 """
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
