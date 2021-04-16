@@ -23,10 +23,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
 
 
-LOGGER.info("[KAI] Kai is starting. | An Zero Union Project. | Licensed under GPLv3.")
+LOGGER.info("[KAI] Rei is starting. | An Len4ice Present | Licensed under GPLv3.")
 
-LOGGER.info("[KAI] Not affiliated to Shie Hashaikai or Villain in any way whatsoever.")
-LOGGER.info("[KAI] Project maintained by: github.com/Ryomen-Sukuna (t.me/Anomaliii)")
+LOGGER.info("[KAI] Not affiliated to Rei Ayanami or Mecha in any way whatsoever.")
+LOGGER.info("[KAI] Project maintained by: github.com/cpsoftboy-cell (t.me/lnalc)")
 
 
 # if version < 3.6, stop bot.
