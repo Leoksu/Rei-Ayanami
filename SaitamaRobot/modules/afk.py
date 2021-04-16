@@ -41,7 +41,7 @@ def afk(update: Update, context: CallbackContext):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-            "{} go afk,sayonara!{}".format(fname, notice))
+            "sayonara, {}-san".format(fname, notice))
     except BadRequest:
         pass
 
@@ -62,9 +62,9 @@ def no_longer_afk(update: Update, context: CallbackContext):
             options = [
                 "Okaeri! {}",
                 "Yoo {}\nMy Darling is Back!",
-                "{} My baby in the chat!",
-                "{} is awake!",
-                "{} is back online!",
+                "{}-san in the chat!",
+                "{} is here!",
+                "{}-san is back online!",
                 "{} is finally here!",
                 "Welcome back! {}",
                 "Where is {}?\nIn the chat!",
