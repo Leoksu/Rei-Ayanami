@@ -79,7 +79,7 @@ Hi {}, my name is {}!
 
 ㉨ I am an Anime themed group management bot ㉨
 ==========================
-`Maintained By` @lnalc
+`Maintained By` @leozxlw
 ==========================
 Find the list of available commands with /help
 """
@@ -224,7 +224,7 @@ def start(update: Update, context: CallbackContext):
                             ),
                             InlineKeyboardButton(
                                 text="Group Chat",
-                                url="https://t.me/halallover",
+                                url="https://t.me/sangatautis",
                             )
                         ],
                     ]
@@ -637,7 +637,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Kai started, Using long polling.")
+        LOGGER.info("Rei started, Using long polling.")
         updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
