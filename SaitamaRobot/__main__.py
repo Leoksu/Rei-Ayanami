@@ -223,11 +223,7 @@ def start(update: Update, context: CallbackContext):
                                 url=f"https://t.me/ReiAyanami_Support",
                             ),
                             InlineKeyboardButton(
-                                text="Group Chat",
-                                url="https://t.me/sangatautis",
-                            ),
-                            InlineKeyboardButton(
-                                text="My Owner"
+                                text="My Owner",
                                 url="https://t.me/lnalc",
                             ),
                         ],
