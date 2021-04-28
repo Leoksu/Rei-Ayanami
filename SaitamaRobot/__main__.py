@@ -75,13 +75,13 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
+Hi {}, my name is {}
 
-㉨ I am an Anime themed group management bot ㉨
-==========================
-`Maintained By` @leozxlw
-==========================
-Find the list of available commands with /help
+Thanks for using me
+
+I am an pretty Anime themed group management bot 
+You can use me to manage your groups as free 
+Type /help to show my available commands
 """
 
 HELP_STRINGS = """
@@ -218,21 +218,25 @@ def start(update: Update, context: CallbackContext):
                             )
                         ],
                         [
-                            InlineKeyboardButton(
+                            InlineKeyboardButton (
                                 text="Support Group",
                                 url=f"https://t.me/ReiAyanami_Support",
                             ),
                             InlineKeyboardButton(
                                 text="Group Chat",
                                 url="https://t.me/sangatautis",
-                            )
+                            ),
+                            InlineKeyboardButton(
+                                text="My Owner"
+                                url="https://t.me/lnalc",
+                            ),
                         ],
                     ]
                 ),
             )
     else:
         update.effective_message.reply_text(
-            "Hello, I'm Here!\n<b>Alive since:</b> <code>{}</code>".format(
+            "Hello sir, I'm here ready to help you!\n<b>Alive since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -282,7 +286,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Here is the help for the *{}* module:\n Thanks me later".format(
+                "Here is the help for the *{}* Thanks me later! module:\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
