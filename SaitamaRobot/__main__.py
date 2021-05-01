@@ -215,11 +215,6 @@ def start(update: Update, context: CallbackContext):
                                 url="t.me/{}?startgroup=true".format(
                                     context.bot.username                            
                                 ),
-                            InlineKeyboardButton (
-                                text="Help",
-                                url=f"t.me/{}?start=ghelp_{}".format(
-                                    context.bot.username, module
-                                ),
                             )
                         ],
                         [
