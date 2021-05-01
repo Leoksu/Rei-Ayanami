@@ -27,7 +27,7 @@ GIFS = [
 
 SLAP_SAITAMA_TEMPLATES = (
     "Slap me one more time and I'll mute you.",
-    "Stop slapping me, B-baka",
+    "Stop slapping me. REEEEEEEEE",
     [
         "I am muting you for a minute.",  # normal reply
         "Stop slapping me just because I can't mute you. REEEEEEEEEE.",  # reply to admin
