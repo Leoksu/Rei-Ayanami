@@ -77,11 +77,13 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Hi {}, my name is {}
 
-Thanks for using me
+Thanks for using me (｡•̀ᴗ-)✧
 
 I am an pretty Anime themed group management bot 
-You can use me to manage your groups as free 
-tap the help button to show my available commands
+You can use me to manage your groups as free
+Type /help to show my available commands
+
+
 """
 
 HELP_STRINGS = """
