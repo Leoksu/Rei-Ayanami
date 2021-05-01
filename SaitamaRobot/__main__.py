@@ -81,7 +81,7 @@ Thanks for using me
 
 I am an pretty Anime themed group management bot 
 You can use me to manage your groups as free 
-Type /help to show my available commands
+tap the help button to show my available commands
 """
 
 HELP_STRINGS = """
@@ -98,7 +98,7 @@ HELP_STRINGS = """
 
 KAI_IMG = "https://telegra.ph/file/e915d20318e8bf8c5ec71.jpg"
 
-DONATE_STRING = """㉨ I'm Free for Everyone ㉨"""
+DONATE_STRING = """ `I'm Free for Everyone` """
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -213,7 +213,12 @@ def start(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 text="Add Rei to your group",
                                 url="t.me/{}?startgroup=true".format(
-                                    context.bot.username
+                                    context.bot.username                            
+                                ),
+                            InlineKeyboardButton (
+                                text="Help",
+                                url=f"t.me/{}?start=ghelp_{}".format(
+                                    context.bot.username, module
                                 ),
                             )
                         ],
@@ -224,7 +229,7 @@ def start(update: Update, context: CallbackContext):
                             ),
                             InlineKeyboardButton(
                                 text="My Owner",
-                                url="https://t.me/lnalc",
+                                url="https://t.me/v1nstr",
                             ),
                         ],
                     ]
@@ -232,7 +237,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "Hello sir, I'm here ready to help you!\n<b>Alive since:</b> <code>{}</code>".format(
+            "`Hello sir, I'm here ready to help you!`\n<b>**Alive since**:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -596,7 +601,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I am now online!")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yo sir, I'am here with some updates!")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
